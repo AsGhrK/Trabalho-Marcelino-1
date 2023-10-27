@@ -7,7 +7,7 @@ export default function Tudo() {
   const [produto, setProduto] = useState("");
   const [preco, setPreco] = useState("");
   const [lista, setLista] = useState(listaLocalStorege || []);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(listaLocalStorege[listaLocalStorege.length - 1]?.id + 1 || 1);
 
   useEffect(() => {
     localStorage.setItem("Lista", JSON.stringify(lista));
