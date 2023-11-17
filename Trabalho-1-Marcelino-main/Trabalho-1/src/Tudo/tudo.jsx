@@ -3,10 +3,10 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 export default function Tudo() {
-  const listaLocalStorege = JSON.parse(localStorage.getItem("Lista"));
+  const listaLocalStorege = JSON.parse(localStorage.getItem("Lista")) || [];
   const [produto, setProduto] = useState("");
   const [preco, setPreco] = useState("");
-  const [lista, setLista] = useState(listaLocalStorege || []);
+  const [lista, setLista] = useState(listaLocalStorege);
   const [id, setId] = useState(listaLocalStorege[listaLocalStorege.length - 1]?.id + 1 || 1);
 
   useEffect(() => {
@@ -49,12 +49,17 @@ export default function Tudo() {
           <p>
             Nome: {prod.produto}, Preço: {prod.preco}, Id: {prod.id}
           </p>
+          <Link className="link" to={`/detalhe/${prod.id}`}><button className="button2">Ver</button></Link>
+
           <button
             onClick={() => removeProduto(prod.id)}
             style={{ backgroundColor: "#d9534f", color: "#fff" }}
           >
             Remover
           </button>
+
+          
+
         </div>
       ))}
     </div>
