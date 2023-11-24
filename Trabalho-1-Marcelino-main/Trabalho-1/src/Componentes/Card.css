@@ -1,0 +1,18 @@
+.card {
+    background-color: #fff; /* Cor de fundo */
+    border: 1px solid #ccc;
+    padding: 20px; /* Aumentando o espaçamento interno */
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px; /* Aumentando o espaçamento abaixo do título */
+}
+
+p {
+    margin: 8px 0;
+    color: #555; /* Alterando a cor do texto */
+}
